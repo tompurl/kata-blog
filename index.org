@@ -1,0 +1,62 @@
+#+HUGO_BASE_DIR: ./
+#+HUGO_SECTION: posts
+
+#+AUTHOR: Tom Purl
+
+#+HUGO_WEIGHT: auto
+#+HUGO_AUTO_SET_LASTMOD: t
+
+* Katas                                                     :@katas:
+** TODO Fizzbuzz Using Robot Framework                                 :kata:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: fizzbuzz-robot-framework
+   :EXPORT_DATE: 2019-10-16
+   :EXPORT_HUGO_MENU: :menu "main"
+   :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :foo bar :baz zoo :alpha 1
+   :END:
+*** Overview
+    The first thing I always try to do to learn a new language after writing "hello
+    world" is implementing [[http://codingdojo.org/kata/FizzBuzz/][fizzbuzz]]. This wasn't true with the Robot Framework, so I
+    thought it would be time to give it a try.
+
+*** My Implementation
+
+     -          https://www.reddit.com/r/robotframework/comments/div6m7/robot_framework_fizzbuzz_request_for_criticism/
+
+*** Observations
+
+    The first thing I learned from this exercise was how surprisingly difficult it
+    was to evaluate the result of an expression. If I was running this in Python I
+    would do something like this:
+
+#+BEGIN_SRC python
+  for num in range(1, 101):
+      if num % 15 == 0:
+          print("fizzbuzz")
+      elif num % 3 == 0:
+          print("fizz")
+      elif num % 5 == 0:
+          print("buzz")
+      else:
+          print(num)
+#+END_SRC
+
+    I can evaluate the =num % 3= part within the else statement using Python. But
+    here’s what I *can’t* do using the Robot Framework:
+
+ 
+#+BEGIN_SRC robot
+  Run keyword if    Is Mod Zero    ${number}    15   Log to Console    FIZZBUZZ
+  ...    ELSE IF    Run keyword and return status    Is Mod Zero    ${number}    3     Log to Console    FIZZ
+  …
+#+END_SRC
+
+
+    I’m sure *something* like this is possible without creating a temporary variable
+    (and evaluating the =Is Mod Zero= 3 times *every time*) but I’m not quite sure
+    what it is.
+
+    The second thing I learned was how easy it was to run a Python one-liner from
+    Robot. If that didn’t work then I simply didn’t see how I was going to evaluate a
+    modulus from Robot without writing a Python module (for a one-liner).
+
