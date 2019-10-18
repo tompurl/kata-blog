@@ -306,3 +306,34 @@
   M-x toggle-truncate-lines
 
   #+END_EXAMPLE
+** DONE Robot Framework Cheat Sheet                   :emacs:robot_framework:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Robot_Framework_Cheat_Sheet
+   :EXPORT_DATE: 2019-10-18
+   :EXPORT_HUGO_MENU: :menu "braindump"
+   :EXPORT_HUGO_SECTION: bd
+   :END:
+*** Emacs
+     Make sure that you create a ctags/etags file so you can use the [[help:robot-mode-find-kw][robot-mode-find-kw]]
+     function to jump to a keyword's definition.
+
+     On windows, I had the best luck with the Universal Ctags executable. Here's the
+     command that I use at my project's root to generate my tags file for Emacs:
+
+     #+BEGIN_SRC sh
+       cd project-root
+       ctags.exe -e --langmap="Robot:.robot.txt" -R
+     #+END_SRC
+*** Debugging
+**** General
+     This is an excellent reference:
+
+     - https://docs.plone.org/external/plone.app.robotframework/docs/source/debugging.html
+**** Dumping All Variable Values
+     Use the following keyword to dump all of the existing variables:
+
+     - =Log Variables    level=INFO=
+
+     Please note that the =level= is VERY important. Just choose INFO and you'll see
+     everything you care about.
+
