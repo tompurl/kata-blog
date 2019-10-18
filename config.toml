@@ -1,4 +1,33 @@
-baseURL = "http://example.org/"
+baseURL = "https://www.tompurl.com/"
+title = "Tom Purl's Website"
 languageCode = "en-us"
-title = "My New Hugo Site"
 theme = "ghostwriter"
+# pygmentsCodeFences = "true"
+
+[Author]
+    name = "Tom Purl"
+
+[Taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[Params]
+    mainSections = ["posts"]
+    intro = true
+    headline = "Tom Purl's Website"
+    description = "My '86 Datsun On the Side of the Information Superhighway"
+    github = "https://github.com/tompurl"
+    email = "tom@tompurl.com"
+    twitter = "https://twitter.com/tompurl"
+    reddit = "https://www.reddit.com/user/tompurl"
+    stackoverflow = "https://stackoverflow.com/users/1380901/tom-purl"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Braindump"
+    url = "/bd"
+    weight = 2
