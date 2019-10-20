@@ -335,4 +335,148 @@
 
      Please note that the =level= is VERY important. Just choose INFO and you'll see
      everything you care about.
+* Fun                                                                  :@fun:
+** Media Log                                             :podcasts:tv:movies:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Media_Log
+   :EXPORT_DATE: 10/19/2019
+   :EXPORT_HUGO_MENU: :menu "braindump"
+   :EXPORT_HUGO_SECTION: bd
+   :END:
+*** Explanation
 
+    I share this stuff because all of the cool kids are doing it 😁
+
+    No really, [[https://tinyletter.com/jenmyers/letters/the-difficult-i-ll-do-right-now-the-impossible-will-take-a-little-while][a lot of people I admire]] keep a public log of all of the
+    media they consume, so I thought I might like it too.
+
+*** 2019
+**** January
+***** 1
+****** Gravity Falls, season 2                                           :tv:
+***** 12
+****** Incredibles 2                                                  :movie:
+***** 19
+****** Strange Brew                                           :movie:rewatch:
+***** 20
+****** Back to the future                                     :rewatch:movie:
+****** Gamera - MST3K                                                 :movie:
+***** 21
+****** Gamera vs. Zigra - MST3K                                       :movie:
+***** 26
+****** Gamera vs Guiron - MST3K                               :rewatch:movie:
+****** Hellboy Omnibus Volume 1                                        :book:
+***** 27
+****** The Pumaman - MST3K                                            :movie:
+**** February
+***** 3
+****** The Amazing Colossal Man/War Of the Colossal Beast - MST3K     :movie:
+***** 5
+****** Sorry to bother you                                            :movie:
+***** 6
+****** Doug Stanhope - no place like home                    :comedy:rewatch:
+***** 7
+****** Last podcast on the left - Josef Mengele series              :podcast:
+****** Kyle Kinane - death of the party                      :comedy:rewatch:
+***** 9
+****** Sturgil Simpson - metamodern sounds in country music   :music:rewatch:
+****** Gravity falls, season 2                                   :tv:rewatch:
+****** Gravity falls, season 1                                   :rewatch:tv:
+***** 17
+****** The indestructible man - MST3K                                 :movie:
+**** March
+***** 1
+****** Dana Gould Hour: Potty Mouthery                              :podcast:
+****** Brains On: How to cook for an alien                          :podcast:
+***** 3
+****** Brains On: Boogers and sun sneezes                           :podcast:
+***** 5
+****** Hot dog taste test                                              :book:
+***** 8
+****** Say Hi - the wishes and the glitch                     :music:rewatch:
+***** 13
+****** Baltimore vol 1: the Plague ships                               :book:
+***** 23
+****** Green River Killer: A True Detective Story                      :book:
+***** 26
+****** Rise of the black flame                                         :book:
+**** April
+***** 12
+****** Archer - season 9                                                 :tv:
+***** 18
+****** Preacher - Volume 1                                             :book:
+***** 25
+****** The Damned United                                              :movie:
+**** May
+***** 3
+****** Shazam!                                                        :movie:
+**** August
+***** 24
+****** Once upon a time in Hollywood                                  :movie:
+**** September
+***** 19
+****** Le Samouraï                                                    :movie:
+***** 27
+****** Captain America                                                :movie:
+***** 28
+****** Captain Marvel                                                 :movie:
+**** October
+***** 7
+****** The Last Podcast On The Left - Mormonism Series              :podcast:
+***** 12
+****** Bill and Ted's Excellent Adventure                     :rewatch:movie:
+* Presentations                                              :@presentations:
+** TODO "Practical Introduction To The Blockchain Using Ethereum" - Presentation
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Blockchain_-_First_Steps_Presentation
+   :EXPORT_DATE: 3/1/2018
+   :EXPORT_HUGO_MENU: :menu "presentations"
+   :EXPORT_HUGO_SECTION: presentations
+   :END:
+   *3/1/18 Update* - I gave this presentation at the [[https://www.meetup.com/foxvalleycp/events/246749490/][2/21/18 meeting]] of the [[https://www.meetup.com/foxvalleycp][Fox
+   Valley Computing Professionals]] club. It was a lot of fun with a *great* group
+   of people.
+
+   (Seriously, this was only the second time that I attended one of their meetings
+   and the other members are really friendly and inclusive, which is something you
+   can't always say about a computer club.)
+
+   We spent most of the time talking about [[https://www.cryptokitties.co/][CryptoKitties]], which really shouldn't have
+   been that surprising I guess :-)
+
+   -----
+
+   [[https://static.tompurl.com/images/waldo-with-ethereum.png]]
+
+   Do you want to learn more about "the blockchain" but don't know where to start?
+   Are you an experiential learner who prefers to learn by doing? And would you
+   prefer to learn without spending much money?
+
+   In the presentation below I go over "dipping your toes" into the Ethereum
+   blockchain for complete beginners. We cover:
+
+   - Setting up a wallet
+   - Buying and managing a cryptocurrency (Ether)
+   - Common gotchas
+
+   The goal is to teach you how to fish and "bootstrap" your own process for learning
+   about the blockchain. It's easy, fairly inexpensive and very, very educational
+   (the process, not the presentation). Also, if you're lucky you can be the first
+   kid on your block to own a crypto-collectible.
+
+   Here's the links to the presentation. The HTML version looks the best:
+
+   - [[http://static.tompurl.com/blockchain-first-steps/][HTML Presentation]]
+
+   If you want to see the speaker notes then open the presentation in Chrome and then
+   press the "s" button. For more information, see the [[https://github.com/hakimel/reveal.js/#pdf-export][RevealJS documentation]].
+
+   Here's the *printable* versions of presentation:
+
+   - [[http://static.tompurl.com/blockchain-first-steps/slides.pdf][PDF Version]]
+   - [[http://static.tompurl.com/blockchain-first-steps/slides-with-speaker-notes.pdf][PDF Version With Speaker Notes]]
+
+   Here's how I print it on my system to conserve paper:
+
+   1. Choose two-sided printing, *long edge*.
+   2. Choose the *landscape* orientation.
