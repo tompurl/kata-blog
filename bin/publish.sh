@@ -24,6 +24,7 @@ elif [[ "$message" != "Need to pull" ]]; then
     exit 1
 fi
 
+
 # Pull the update
 git pull origin master
 
