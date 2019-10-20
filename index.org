@@ -61,7 +61,6 @@
     modulus from Robot without writing a Python module (for a one-liner).
 * Braindump                                                      :@braindump:
 ** DONE Emacs Cheat Sheet                                         :org:emacs:
-   CLOSED: [2019-10-17 Thu 20:51]
    :PROPERTIES:
    :EXPORT_FILE_NAME: EmacsCheatSheet
    :EXPORT_DATE: 2019-10-17
