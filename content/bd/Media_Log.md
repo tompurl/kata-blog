@@ -1,7 +1,7 @@
 +++
 title = "Media Log"
 author = ["Tom Purl"]
-lastmod = 2019-10-20T16:55:35-05:00
+lastmod = 2019-10-21T12:20:20-05:00
 tags = ["podcasts", "tv", "movies"]
 categories = ["fun"]
 weight = 2001
@@ -201,3 +201,8 @@ media they consume, so I thought I might like it too.
 #### 7 {#7}
 
 -   The Last Podcast On The Left - Mormonism Series     :podcast:
+
+
+#### 12 {#12}
+
+-   Bill and Ted's Excellent Adventure     :rewatch:movie:

@@ -1,12 +1,12 @@
 +++
 title = "Git Cheatsheet"
 author = ["Tom Purl"]
-date = 2019-10-18
-lastmod = 2019-10-21T11:56:56-05:00
+date = 2019-10-21T11:57:00-05:00
+lastmod = 2019-10-21T12:20:20-05:00
 tags = ["git"]
 categories = ["braindump"]
 weight = 2003
-draft = true
+draft = false
 [menu.braindump]
   weight = 2003
   identifier = "git-cheatsheet"
