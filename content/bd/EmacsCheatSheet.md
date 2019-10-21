@@ -2,7 +2,7 @@
 title = "Emacs Cheat Sheet"
 author = ["Tom Purl"]
 date = 2019-10-17
-lastmod = 2019-10-19T09:15:31-05:00
+lastmod = 2019-10-21T11:57:27-05:00
 tags = ["org", "emacs"]
 categories = ["braindump"]
 weight = 2001
@@ -11,9 +11,6 @@ draft = false
   weight = 2001
   identifier = "emacs-cheat-sheet"
 +++
-
--   State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2019-10-17 Thu 20:51]</span></span>
-
 
 ## Screen navigation {#screen-navigation}
 
@@ -235,6 +232,13 @@ For example:
 ```text
 C-h v org-agenda-files
 ```
+
+
+## File Encodings {#file-encodings}
+
+I can't do it better than Xah :-)
+
+-   <http://ergoemacs.org/emacs/emacs_encoding_decoding_faq.html>
 
 
 ## Misc {#misc}

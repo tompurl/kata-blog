@@ -67,7 +67,6 @@
    :EXPORT_HUGO_MENU: :menu "braindump"
    :EXPORT_HUGO_SECTION: bd
    :END:
-   - State "DONE"       from "TODO"       [2019-10-17 Thu 20:51]
 *** Screen navigation
 
   - Quit
@@ -337,7 +336,8 @@
 
      Please note that the =level= is VERY important. Just choose INFO and you'll see
      everything you care about.
-** TODO Git Cheatsheet                                                  :git:
+** DONE Git Cheatsheet                                                  :git:
+   CLOSED: [2019-10-21 Mon 11:57]
    :PROPERTIES:
    :EXPORT_FILE_NAME: GitCheatsheet
    :EXPORT_DATE: 2019-10-18
