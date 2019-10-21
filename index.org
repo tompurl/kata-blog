@@ -268,7 +268,9 @@
   #+BEGIN_EXAMPLE
       C-h v org-agenda-files
   #+END_EXAMPLE
-
+*** File Encodings
+    I can't do it better than Xah :-)
+    - http://ergoemacs.org/emacs/emacs_encoding_decoding_faq.html
 *** Misc
 
 **** Remove Version Page On Startup
