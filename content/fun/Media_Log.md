@@ -1,12 +1,12 @@
 +++
 title = "Media Log"
 author = ["Tom Purl"]
-lastmod = 2019-10-21T12:20:20-05:00
+lastmod = 2019-10-21T12:32:23-05:00
 tags = ["podcasts", "tv", "movies"]
 categories = ["fun"]
 weight = 2001
 draft = false
-[menu.braindump]
+[menu.fun]
   weight = 2001
   identifier = "media-log"
 +++

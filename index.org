@@ -412,8 +412,8 @@
    :PROPERTIES:
    :EXPORT_FILE_NAME: Media_Log
    :EXPORT_DATE: 10/19/2019
-   :EXPORT_HUGO_MENU: :menu "braindump"
-   :EXPORT_HUGO_SECTION: bd
+   :EXPORT_HUGO_MENU: :menu "fun"
+   :EXPORT_HUGO_SECTION: fun
    :END:
 *** Explanation
 
