@@ -1,0 +1,17 @@
+#+TITLE: README
+
+* Overview
+
+Tom's new blog. We'll see how long this one takes too :-)
+
+* Cloning
+#+BEGIN_SRC shell
+  git clone --recurse-submodules git@github.com:tompurl/kata-blog.git
+#+END_SRC
+
+* Publishing
+  #+BEGIN_SRC shell
+    cd kata-blog
+    hugo
+    rsync -av --progress public/ blog:/home/public
+  #+END_SRC
