@@ -502,6 +502,8 @@
 ***** 24
 ****** Carnival of Souls                                              :movie:
 ****** Mulholland Drive                                       :rewatch:movie:
+***** 25
+****** Freaks                                                 :movie:rewatch:
 * Presentations                                              :@presentations:
 ** DONE "Practical Introduction To The Blockchain Using Ethereum" - Presentation
    CLOSED: [2019-10-21 Mon 12:22]
