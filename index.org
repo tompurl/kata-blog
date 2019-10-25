@@ -499,6 +499,9 @@
 ****** Bill and Ted's Excellent Adventure                     :rewatch:movie:
 ***** 23
 ****** Last Podcast on the Left - Men in Black Series       :rewatch:podcast:
+***** 24
+****** Carnival of Souls                                              :movie:
+****** Mulholland Drive                                       :rewatch:movie:
 * Presentations                                              :@presentations:
 ** DONE "Practical Introduction To The Blockchain Using Ethereum" - Presentation
    CLOSED: [2019-10-21 Mon 12:22]
