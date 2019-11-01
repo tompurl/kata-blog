@@ -504,6 +504,9 @@
 ****** Mulholland Drive                                       :rewatch:movie:
 ***** 25
 ****** Freaks                                                 :movie:rewatch:
+**** November
+***** 1
+****** MST3K: Bride of the Monster                                    :movie:
 * Presentations                                              :@presentations:
 ** DONE "Practical Introduction To The Blockchain Using Ethereum" - Presentation
    CLOSED: [2019-10-21 Mon 12:22]
