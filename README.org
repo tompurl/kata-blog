@@ -13,7 +13,7 @@ Tom's new blog. We'll see how long this one takes too :-)
   2. Make changes
   3. Convert the changes to the org file into Hugo-compatible markdown using the
      following Emacs command on the subtree:
-     - =C-c C-e H O=
+     - =C-c C-e H H=
   4. Run this command to see your changes:
      #+BEGIN_SRC shell
        hugo server -D
