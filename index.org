@@ -342,6 +342,43 @@
 
      Please note that the =level= is VERY important. Just choose INFO and you'll see
      everything you care about.
+*** Docker-Related Helpers
+    This is an excellent tutorial on using Docker with the Robot Framework:
+
+    - https://medium.com/@ypasmk/robot-framework-with-docker-in-less-than-10-minutes-7b86df769c22
+
+    This is really more Chrome and Docker related than Robot Framework related, but
+    this is a very promising technique for visually troubleshooting a Robot Framework
+    job that is a) driving a web browser and b) running in a Docker container. 
+
+    First start your Docker container that contains Chrome using a command that looks
+    something like this:
+
+    #+BEGIN_SRC shell
+      docker run --rm -it -p 9222:9222 -v /home/tom/git/robot-code:/home/jenkins/code --entrypoint bash foo/some-chrome-image
+    #+END_SRC
+
+    Once you're using the container's interactive shell run this command:
+
+    #+BEGIN_SRC shell
+      /usr/bin/google-chrome \
+          --disable-gpu --headless --no-sandbox \
+          --remote-debugging-address=0.0.0.0 \
+          --remote-debugging-port=9222
+    #+END_SRC
+
+    Then, on the host machine, visit the following URL in Chrome or Firfox:
+
+    - http://localhost:9222
+
+    ... and then click on the =about:blank= link. 
+
+    You can now see a "window" into the browser running within the container.
+
+    Again, this doesn't have enough wiring to work with Robot Framework yet. That's
+    something I still need to figure out. But what I'm *hoping* is that I'll figure
+    out a way to watch my Robot Framework tests in a browser while they're running
+    withing a Docker container.
 ** DONE Git Cheatsheet                                                  :git:
    CLOSED: [2019-10-21 Mon 11:57]
    :PROPERTIES:
@@ -513,6 +550,8 @@
 **** November
 ***** 1
 ****** MST3K: Bride of the Monster                                    :movie:
+***** 9
+****** Joker                                                          :movie:
 ** Favorite Quotes                                                   :quotes:
    :PROPERTIES:
    :EXPORT_FILE_NAME: Favorite Quotes
@@ -1095,7 +1134,6 @@
       Republicans don't like it; they don't like spending money on anything unless it
       blows up, like Iraq, or Merill Lynch."
   #+END_QUOTE
-
 * Presentations                                              :@presentations:
 ** DONE "Practical Introduction To The Blockchain Using Ethereum" - Presentation
    CLOSED: [2019-10-21 Mon 12:22]
