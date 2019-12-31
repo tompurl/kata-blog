@@ -552,6 +552,19 @@
 ****** MST3K: Bride of the Monster                                    :movie:
 ***** 9
 ****** Joker                                                          :movie:
+**** December
+***** 7
+****** Casey Anthony Series on Last Podcast on the Left     :rewatch:podcast:
+***** 13
+****** The Murder of Girly Chew Series on Last Podcast on the Left  :podcast:
+***** 17
+****** Fountain of the World Series on the Cults podcast            :podcast:
+***** 23
+****** Jon Benet Ramsey Series on Last Podcast on the Left  :rewatch:podcast:
+***** 30 
+****** Shazam!                                                :rewatch:movie:
+****** My Neighbor Totoro                                     :rewatch:movie:
+****** H.H Holmes Series on Last Podcast on the Left        :rewatch:podcast:
 ** Favorite Quotes                                                   :quotes:
    :PROPERTIES:
    :EXPORT_FILE_NAME: Favorite Quotes
