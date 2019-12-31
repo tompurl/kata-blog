@@ -560,6 +560,37 @@
    :EXPORT_HUGO_SECTION: fun
    :END:
 *** 2019
+**** 12/31/2019
+     :PROPERTIES:
+     :CUSTOM_ID: 12_31_2019
+     :END:  
+***** Maintainable: Victor Rentea: Never Separate The Refactoring From The Deliverable
+        Here's a great quote on software development from
+        https://maintainable.fm/episodes/victor-rentea-never-separate-the-refactoring-from-the-deliverable-IWvo_ttQ
+        [00:19:11]
+
+        #+BEGIN_QUOTE -r
+Never ever ever ever separate the task of refactoring from the task of getting your
+feature implemented. You should never put refactoring on any board.
+        #+END_QUOTE
+***** Sunset Boulevard
+      I just loved this Dana Gould quote at 00:06:39 in the [[https://www.patreon.com/posts/pepitone-30708459][Pepitone!]] bonus episode
+      of the Dana Gould Hour Podcast:
+
+      #+BEGIN_QUOTE -r
+    Sunset boulevard is a billboard-lined sluice gate of cultural diarrhea, but
+    sometimes you gotta drive it.
+      #+END_QUOTE
+***** "Wisconsin Charm" in the 70's
+      Henry Zebrowski has dozens if not hundreds of fantastic quotes from the [[https://www.lastpodcastontheleft.com/][Last
+      Podcast on the Left]], but as a Chicagoland resident this one really hit home. In
+      [[http://traffic.libsyn.com/lpotl/2ce8bef8-1f34-48e5-9357-00ff69ccafce.mp3][part 2 of the John Wayne Gacy]] series the fellas were describing how "charming"
+      and popular John Wayne Gacy was, and Henry made this comment at 00:50:32:
+
+      #+BEGIN_QUOTE -r
+      I just think he was loud and threw his money around, I think that's just
+      Wisconsin Charm (in 1977).
+      #+END_QUOTE
 **** 9/25/19
      :PROPERTIES:
      :CUSTOM_ID: 9_25_2019
