@@ -450,13 +450,15 @@
 
     You should now be able to perform a "text" diff on your files.
 
-** TODO Python Notes                                                 :python:
+** DONE Python Notes                                                 :python:
+   CLOSED: [2020-02-12 Wed 10:18]
    :PROPERTIES:
    :EXPORT_FILE_NAME: PythonNotes
    :EXPORT_DATE: 2020-02-11
    :EXPORT_HUGO_MENU: :menu "braindump"
    :EXPORT_HUGO_SECTION: bd
    :END:
+   - State "DONE"       from "TODO"       [2020-02-12 Wed 10:18]
 *** Toolset
     :PROPERTIES:
     :CUSTOM_ID: toolset
