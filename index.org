@@ -1445,3 +1445,21 @@ feature implemented. You should never put refactoring on any board.
    easy to read, write, and maintain, I would much rather use a "real" programming
    language bundled with a good test runner (both of which are included in the Robot
    Framework).
+* Meta
+** About Me                                                           :@meta:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: About
+   :EXPORT_DATE: 4/14/2000
+   :EXPORT_HUGO_MENU: :menu "main"
+   :END:
+   [[/images/avatar.png]]
+
+   Hello! I'm Tom. I like to build cool things with computers and share them with
+   others. I currently work at a company called Wi-Tronix as an Automation
+   Engineer. My views are my own and are in no way associated with my employer.
+
+   If you would like to contact me, the best way is probably [[mailto:tom@tompurl.com][email]]. I'm also trying
+   to become more active on [[https://mastodon.technology/@tompurl/][Mastodon.technology]]. I used to use Twitter but I
+   eventually learned to value my sanity :-)
+
+
