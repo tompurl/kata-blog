@@ -1403,7 +1403,6 @@ feature implemented. You should never put refactoring on any board.
    :EXPORT_FILE_NAME: Reasons_For_Not_Using_Postman
    :EXPORT_DATE: 4/14/2000
    :END:
-   - State "DONE"       from "TODO"       [2020-04-14 Tue 16:41]
    A co-worker of mine recently asked me why I prefer to write automated REST API
    tests using the [[https://robotframework.org/][Robot Framework]]. Specifically, he couldn't understand why I didn't
    just automate everything using [[https://www.postman.com/][Postman]], which is a very popular way of doing such
