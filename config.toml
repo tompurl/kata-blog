@@ -33,13 +33,18 @@ theme = "ghostwriter"
     weight = 2
 
 [[menu.main]]
+    name = "Tutorials"
+    url = "/categories/tutorials"
+    weight = 2
+
+[[menu.main]]
     name = "Presentations"
-    url = "/presentations"
+    url = "/categories/presentations"
     weight = 2
 
 [[menu.main]]
     name = "Fun"
-    url = "/fun"
+    url = "/categories/fun"
     weight = 2
 
 [[menu.main]]
