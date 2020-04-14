@@ -18,7 +18,6 @@
    :PROPERTIES:
    :EXPORT_FILE_NAME: fizzbuzz-robot-framework
    :EXPORT_DATE: 2019-10-17
-   :EXPORT_HUGO_MENU: :menu "main"
    :END:
 *** Overview
     The first thing I always try to do to learn a new language after writing "hello
@@ -1320,8 +1319,6 @@ feature implemented. You should never put refactoring on any board.
    :PROPERTIES:
    :EXPORT_FILE_NAME: Blockchain_-_First_Steps_Presentation
    :EXPORT_DATE: 3/1/2018
-   :EXPORT_HUGO_MENU: :menu "presentations"
-   :EXPORT_HUGO_SECTION: presentations
    :END:
      *3/1/18 Update* - I gave this presentation at the [[https://www.meetup.com/foxvalleycp/events/246749490/][2/21/18 meeting]] of the [[https://www.meetup.com/foxvalleycp][Fox
    Valley Computing Professionals]] club. It was a lot of fun with a *great* group
