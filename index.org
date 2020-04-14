@@ -584,6 +584,37 @@ pipenv install --dev pytest jedi autopep8 yapf flake8
 
     As long as I'm using =pipenv= and =pipenv.el= then this configuration is pretty
     darned automatic.
+*** TLS Oddities
+**** Converting an Encrypted Keypair Into Friendly Formats
+     If you want to use client-side TLS with the =requests= library then the easiest
+     way to do that is with an unencrypted keypair, with one file for each key. Easy,
+     right?
+
+     Welllll I tried doing this 10 different ways with my favorite TLS tool Key Store
+     Explorer but just couldn't find the proper format that the =requests= library
+     was expecting. Thank goodness I finally found the following:
+
+     - https://github.com/psf/requests/issues/1573#issuecomment-188125157
+
+     Here's my shamelessly copying and pasting it:
+
+***** Generate certificate and private key.
+#+BEGIN_EXAMPLE
+   // Generate the certificate file.
+   openssl pkcs12 -in /path/to/p12cert -nokeys -out certificate.pem
+   // Generate private key with passpharse, First enter the password provided with the key and then an arbitrary PEM password //(say: 1234) 
+   openssl pkcs12 -in /path/to/p12cert -nocerts -out privkey.pem
+#+END_EXAMPLE
+
+   Well, we are not done yet and we need to generate the key that doesn't require the
+   PEM password every time it needs to talk to the server.
+
+***** Generate key without passphrase.
+ #+BEGIN_EXAMPLE
+      // Running this command will prompt for the pem password(1234), on providing which we will obtain the plainkey.pem
+      openssl rsa -in privkey.pem -out plainkey.pem
+ #+END_EXAMPLE
+
 
 * Fun                                                                  :@fun:
 ** Media Log                                             :podcasts:tv:movies:
