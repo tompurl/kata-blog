@@ -614,7 +614,33 @@ pipenv install --dev pytest jedi autopep8 yapf flake8
       // Running this command will prompt for the pem password(1234), on providing which we will obtain the plainkey.pem
       openssl rsa -in privkey.pem -out plainkey.pem
  #+END_EXAMPLE
+** TODO Kubernetes Cheat Sheet                            :docker:kubernetes:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Kubernetes_Cheat_Sheet
+   :EXPORT_DATE: 2020-04-19
+   :EXPORT_HUGO_MENU: :menu "braindump"
+   :EXPORT_HUGO_SECTION: bd
+   :END:
+*** kubectl
+**** Choosing the correct context
+     First check out your available contexts like this:
+     #+BEGIN_SRC shell :results value org
+       kubectl config get-contexts
+     #+END_SRC
 
+     #+begin_src org
+     CURRENT   NAME                                                 CLUSTER                                              AUTHINFO                                             NAMESPACE
+     ,*        do-toms-cluster                                      do-toms-cluster                                      do-toms-cluster-admin     
+               gke_symmetric-blade-21345                            gke_symmetric-blade-21345                            gke_symmetric-blade-21345   
+     #+end_src
+
+     You can then choose the desired context like this:
+
+    #+BEGIN_SRC shell :results value org
+      kubectl config use-context do-toms-cluster
+    #+END_SRC
+
+     
 * Fun                                                                  :@fun:
 ** Media Log                                             :podcasts:tv:movies:
    :PROPERTIES:
