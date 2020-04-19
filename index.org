@@ -614,7 +614,8 @@ pipenv install --dev pytest jedi autopep8 yapf flake8
       // Running this command will prompt for the pem password(1234), on providing which we will obtain the plainkey.pem
       openssl rsa -in privkey.pem -out plainkey.pem
  #+END_EXAMPLE
-** TODO Kubernetes Cheat Sheet                            :docker:kubernetes:
+** DONE Kubernetes Cheat Sheet                            :docker:kubernetes:
+   CLOSED: [2020-04-19 Sun 16:39]
    :PROPERTIES:
    :EXPORT_FILE_NAME: Kubernetes_Cheat_Sheet
    :EXPORT_DATE: 2020-04-19
