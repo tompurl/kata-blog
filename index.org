@@ -639,7 +639,8 @@ pipenv install --dev pytest jedi autopep8 yapf flake8
     #+BEGIN_SRC shell :results value org
       kubectl config use-context do-toms-cluster
     #+END_SRC
-
+**** Merging Multiple Contexts
+     - https://stackoverflow.com/a/46184649/1380901
      
 * Fun                                                                  :@fun:
 ** Media Log                                             :podcasts:tv:movies:
