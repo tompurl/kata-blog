@@ -456,8 +456,8 @@
    :EXPORT_DATE: 2020-02-11
    :EXPORT_HUGO_MENU: :menu "braindump"
    :EXPORT_HUGO_SECTION: bd
+   :EXPORT_OPTIONS: toc:2
    :END:
-   - State "DONE"       from "TODO"       [2020-02-12 Wed 10:18]
 *** Toolset
     :PROPERTIES:
     :CUSTOM_ID: toolset
