@@ -496,6 +496,19 @@ pipenv shell
 pipenv --python <path to preferred python interpreter>
 pipenv install --dev pytest jedi autopep8 yapf flake8
      #+END_EXAMPLE
+**** Managing Pipfile and Pipfile.lock
+     This is a good resource:
+
+     - https://github.com/pypa/pipenv/issues/598
+
+     This comment in particular is very helpful:
+
+     - https://github.com/pypa/pipenv/issues/598#issuecomment-505433122
+
+     In general...
+     - Yes, you should add them both to your git repo.
+     - You should add =Pipfile.lock -diff= to your =.gitattributes= file so that git
+       doesn't try to perform text-based diffs with it.
 *** Solving PYTHONPATH Issues
     :PROPERTIES:
     :CUSTOM_ID: solving-pythonpath
