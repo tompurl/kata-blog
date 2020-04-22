@@ -1,7 +1,7 @@
 +++
 title = "Reasons For Not Writing Your API Tests In Postman"
 author = ["Tom Purl"]
-lastmod = 2020-04-21T12:43:21-05:00
+lastmod = 2020-04-22T16:27:52-05:00
 tags = ["testing", "api", "postman", "robot-framework"]
 categories = ["tutorials"]
 weight = 2001

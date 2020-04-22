@@ -1,7 +1,7 @@
 +++
 title = "Favorite Quotes"
 author = ["Tom Purl"]
-lastmod = 2020-04-21T12:42:58-05:00
+lastmod = 2020-04-22T16:27:27-05:00
 tags = ["quotes"]
 categories = ["fun"]
 weight = 2002

@@ -2,7 +2,7 @@
 title = "Python Notes"
 author = ["Tom Purl"]
 date = 2020-02-12T10:18:00-06:00
-lastmod = 2020-04-21T12:42:55-05:00
+lastmod = 2020-04-22T16:27:21-05:00
 tags = ["python"]
 categories = ["braindump"]
 weight = 2004
@@ -12,7 +12,28 @@ draft = false
   identifier = "python-notes"
 +++
 
--   State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2020-02-12 Wed 10:18]</span></span>
+<div class="ox-hugo-toc toc">
+<div></div>
+
+## Table of Contents
+
+- [Toolset](#toolset)
+- [Pipenv](#pipenv)
+    - [Rebuilding a virtual environment](#rebuilding-a-virtual-environment)
+    - [Creating a New Project](#creating-a-new-project)
+    - [Managing Pipfile and Pipfile.lock](#managing-pipfile-and-pipfile-dot-lock)
+- [Solving PYTHONPATH Issues](#solving-pythonpath)
+    - [Checking The Instance Of Python Being Executed](#checking-python-instance)
+    - [Checking The Loaded Libraries At Runtime](#checking-loaded-libraries-at-runtime)
+    - [Checking The Library Version In The REPL](#checking-loaded-libraries-in-repl)
+- [Setting Up A Development Environment On Windows](#windows-dev)
+    - [sniffer Isn't Usable on Windows](#sniffer-on-windows)
+    - [Jedi's A Little Funny](#funny-jedi)
+- [Emacs Setup](#emacs)
+- [TLS Oddities](#tls-oddities)
+    - [Converting an Encrypted Keypair Into Friendly Formats](#converting-an-encrypted-keypair-into-friendly-formats)
+</div>
+<!--endtoc-->
 
 
 ## Toolset {#toolset}
@@ -59,6 +80,23 @@ one:
 pipenv --python <path to preferred python interpreter>
 pipenv install --dev pytest jedi autopep8 yapf flake8
 ```
+
+
+### Managing Pipfile and Pipfile.lock {#managing-pipfile-and-pipfile-dot-lock}
+
+This is a good resource:
+
+-   <https://github.com/pypa/pipenv/issues/598>
+
+This comment in particular is very helpful:
+
+-   <https://github.com/pypa/pipenv/issues/598#issuecomment-505433122>
+
+In general...
+
+-   Yes, you should add them both to your git repo.
+-   You should add `Pipfile.lock -diff` to your `.gitattributes` file so that git
+    doesn't try to perform text-based diffs with it.
 
 
 ## Solving PYTHONPATH Issues {#solving-pythonpath}

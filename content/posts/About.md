@@ -1,7 +1,7 @@
 +++
 title = "About Me"
 author = ["Tom Purl"]
-lastmod = 2020-04-21T12:43:22-05:00
+lastmod = 2020-04-22T16:27:54-05:00
 categories = ["meta"]
 weight = 2001
 draft = false

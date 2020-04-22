@@ -2,7 +2,7 @@
 title = "Fizzbuzz Using Robot Framework"
 author = ["Tom Purl"]
 date = 2019-10-17T20:51:00-05:00
-lastmod = 2020-04-21T12:42:51-05:00
+lastmod = 2020-04-22T16:27:13-05:00
 tags = ["robot-framework"]
 categories = ["katas"]
 weight = 2001

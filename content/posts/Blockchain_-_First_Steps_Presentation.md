@@ -2,7 +2,7 @@
 title = "\"Practical Introduction To The Blockchain Using Ethereum\" - Presentation"
 author = ["Tom Purl"]
 date = 2019-10-21T12:22:00-05:00
-lastmod = 2020-04-21T12:43:21-05:00
+lastmod = 2020-04-22T16:27:51-05:00
 categories = ["presentations"]
 weight = 2001
 draft = false

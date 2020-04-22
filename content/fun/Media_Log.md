@@ -1,7 +1,7 @@
 +++
 title = "Media Log"
 author = ["Tom Purl"]
-lastmod = 2020-04-21T12:42:56-05:00
+lastmod = 2020-04-22T16:27:25-05:00
 tags = ["podcasts", "tv", "movies"]
 categories = ["fun"]
 weight = 2001

@@ -2,7 +2,7 @@
 title = "Emacs Cheat Sheet"
 author = ["Tom Purl"]
 date = 2019-10-17
-lastmod = 2020-04-21T12:42:52-05:00
+lastmod = 2020-04-22T16:27:15-05:00
 tags = ["org", "emacs"]
 categories = ["braindump"]
 weight = 2001
