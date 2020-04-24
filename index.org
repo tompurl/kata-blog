@@ -1486,11 +1486,22 @@ feature implemented. You should never put refactoring on any board.
    easy to read, write, and maintain, I would much rather use a "real" programming
    language bundled with a good test runner (both of which are included in the Robot
    Framework).
+* DONE I Contributed to the Robot Framework Cookbook! :testing:api:robot_framework:
+  CLOSED: [2020-04-24 Fri 10:44]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: I_Contrib_RF_Cookbook
+   :EXPORT_DATE: 4/24/2020
+   :END:
+   I completed my first contribution to the [[https://github.com/adrianyorke/robotframework-cookbook][Robot Framework Cookbook]] recently and I'm
+   happy to say that my PR was accepted! Please check it out if you're interested in
+   using the Robot Framework to test REST API's:
+
+   - [[https://github.com/adrianyorke/robotframework-cookbook/blob/master/src/section_09/recipe092_working_with_rest_library.robot][Recipe 092 - Working With RESTinstance Library]]
 * Meta
 ** About Me                                                           :@meta:
    :PROPERTIES:
    :EXPORT_FILE_NAME: About
-   :EXPORT_DATE: 4/14/2000
+   :EXPORT_DATE: 4/14/2020
    :EXPORT_HUGO_MENU: :menu "main"
    :END:
    [[/images/avatar.png]]
