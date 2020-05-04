@@ -655,7 +655,14 @@ pipenv install --dev pytest jedi autopep8 yapf flake8
     #+END_SRC
 **** Merging Multiple Contexts
      - https://stackoverflow.com/a/46184649/1380901
-     
+*** k3s
+**** How to run =kubeconfig=
+     At first it's best to run =kubeconfig= from the k3s server itself. Here's a nice
+     alias for it:
+
+     #+BEGIN_SRC sh
+       alias kubectl='sudo k3s kubectl'
+     #+END_SRC
 * Fun                                                                  :@fun:
 ** Media Log                                             :podcasts:tv:movies:
    :PROPERTIES:
