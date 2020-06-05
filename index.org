@@ -1563,6 +1563,66 @@ feature implemented. You should never put refactoring on any board.
    find more information on them here:
 
    - https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/
+** DONE Lessons Learned - Where Is My K8S Persistent Volume Stored? :kubernetes:digital_ocean:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: LL_K8S_Where_Is_PV_Stored
+   :EXPORT_DATE: 6/5/2020
+   :END:
+   The most confusing aspect of using Kubernetes for me is *storage*. I mean, they
+   *seem* so simple, but take a look at this:
+
+   #+BEGIN_SRC yaml :exports code-or-both
+     apiVersion: v1
+     kind: PersistentVolumeClaim
+     metadata:
+       name: mysql-nc-pv-claim
+       labels:
+         app: nextcloud
+     spec:
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           storage: 5Gi
+   #+END_SRC
+
+   Here's some questions that jump to my mind:
+
+   - How is a Persistent Volume Claim (PVC) different than a Persistent Volume (PV)?
+     Why do I only need a PVC sometimes?
+   - What if I eventually need more than 5 gigs of storage? Can I auto resize the partition?
+   - What if I wanted to browse this volume using a tool like Windows Explorer? Can I
+     get shell access?
+
+   All of these beg the following fundamental question:
+
+*** Where and on What Are My Files Stored?
+
+    Let's assume that you applied the following PVC above and now you want to know
+    where the heck your volume is. Your first tool is the =kubectl get pvc=
+    command. Here's some sample output from my Digital Ocean Kubernetes cluster:
+
+    #+BEGIN_EXAMPLE
+~ (k8s: main) $ kubectl get pvc
+NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS       AGE
+mysql-nc-pv-claim    Bound    pvc-c398aba2-cb57-48ee-a370-8f04107be38a1  5Gi        RWO            do-block-storage   3d20h
+    #+END_EXAMPLE
+
+    Take a look at the *STORAGECLASS* column. Hmm, I wonder what =do-block-storage=
+    means? I guess I'll look at the [[https://kubernetes.io/docs/concepts/storage/storage-classes/][official Kubernetes docs on storage class
+    types]]. That should explain everything, right?
+
+    [[https://media.giphy.com/media/3o7TKB3oifq46DDhOE/giphy.gif]]
+
+    Uhh, ok. Well, let's see what Google tells us:
+
+    - https://www.digitalocean.com/docs/kubernetes/how-to/add-volumes/
+
+    Ahh, thank goodness Digital Ocean wrote up a nice tutorial on this. That explains
+    *this specific storage class* very well.
+
+    Good luck!
+
 * Meta
 ** About Me                                                           :@meta:
    :PROPERTIES:
