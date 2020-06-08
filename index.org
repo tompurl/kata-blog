@@ -663,6 +663,22 @@ pipenv install --dev pytest jedi autopep8 yapf flake8
      #+BEGIN_SRC sh
        alias kubectl='sudo k3s kubectl'
      #+END_SRC
+*** Helm
+**** Installation of a Chart
+     First grab the values like thes:
+
+     #+BEGIN_SRC bash
+       helm get values RELEASE_NAME [flags]
+     #+END_SRC
+
+     Update the values.yaml file and then install the chart like this:
+
+     #+BEGIN_SRC bash
+       helm install -f myvalues.yaml RELEASE_NAME [--namespace NAMESPACE] CHARTNAME
+     #+END_SRC
+**** Debugging / Development
+     TODO
+**** Updates
 * Fun                                                                  :@fun:
 ** Media Log                                             :podcasts:tv:movies:
    :PROPERTIES:
@@ -1622,6 +1638,38 @@ mysql-nc-pv-claim    Bound    pvc-c398aba2-cb57-48ee-a370-8f04107be38a1  5Gi    
     *this specific storage class* very well.
 
     Good luck!
+** DONE Hooray! I Deployed My First Public-Facing App On Kubernetes :nextcloud:digital_ocean:kubernetes:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: My_First_Public_Facing_App_On_K8S
+   :EXPORT_DATE: 6/5/2020
+   :END:
+   I'm happy to say that I deployed my first "real", public-facing app on top of a
+   Kubernetes cluster. It's a Nextcloud server and my host is Digital Ocean (DO). So
+   far the experience has been very good and I'm very impressed the host and software
+   stack.
+
+   My deployment "code" is available here:
+
+   - https://github.com/tompurl/nextcloud-k8s
+
+   The notes are pretty rough and the non-secrets are hard-coded for my needs, so I
+   have a bit of work to do before most people can use it :-) However, it does a lot
+   of cool things that you can't find in the official Helm package:
+
+   - It splits data among two persistent volumes, one for =/var/www/html/data= (where
+     documents are stored) and one for everything else under =/var/www/html=.
+   - It relies on the [[https://hub.docker.com/_/mariadb][official MariaDB Docker image]], *not* the one maintained by
+     Bitnami. This is important if you ever want to run these scripts on an ARM-based
+     K3S cluster (which I do soon).
+   - It installs less, since it doesn't include Redis or Cron images. Some might say
+     that less functionality is a disadvantage but I think it's all about perspective ;-)
+
+   Here's my future goals:
+
+   - Scripts that also work on a K3S cluster running on Raspberry Pi's.
+   - A Helm chart
+   - Better WebDav support. Currently the DO version of the scripts works with some
+     WebDav clients but not all.
 
 * Meta
 ** About Me                                                           :@meta:
