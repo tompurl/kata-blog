@@ -1670,7 +1670,89 @@ mysql-nc-pv-claim    Bound    pvc-c398aba2-cb57-48ee-a370-8f04107be38a1  5Gi    
    - A Helm chart
    - Better WebDav support. Currently the DO version of the scripts works with some
      WebDav clients but not all.
+** DONE Troubleshooting Errors During a Nextcloud Upgrade from 18 to 19 on Kubernetes :nextcloud:kubernetes:
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Nextcloud_Upgrade_From_18_19_K8S
+   :EXPORT_DATE: 6/9/2020
+   :END:
+*** Background
+   Today I upgrading my Nextcloud server from version 18 to 19 by simply changing the
+   Docker image version tag like so:
 
+   #+BEGIN_SRC sh
+        kubectl --record deployment.apps/nextcloud set image deployment.v1.apps/nextcloud nextcloud=nextcloud:19.0.0-apache
+   #+END_SRC
+   
+   After waiting for my Nextcloud pod to start I got a 503 error from Nginx. Hmm I
+   thought, this must be a secrets issue since I usually update the deployment using
+   the following command:
+
+   #+BEGIN_SRC sh
+     kubectl apply -k ./
+   #+END_SRC
+
+   I therefore updated the version tag for the Nextcloud image in my YAML file and
+   ran that command and waited for the pod to start. Once I did I saw that my site
+   was in *maintenance mode*.
+
+   Hmm, ok let's look at the logs. Nothing. Uhhhh, now what?
+*** Solution
+    I learned that you can turn on maintenance mode in Nextcloud by running an =occ=
+    command from inside the Nextcloud pod. How does one do that you say?
+
+    First, install the [[https://krew.sigs.k8s.io/docs/user-guide/setup/install/][Krew plugin]] for =kubectl=. This allows you to easily install
+    other plugins, the [[https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-exec-as][exec-as plugin]]. This plugin makes it easy to execute commands
+    within Kubernetes-managed containers as a non-root user.
+
+    So first I "tunneled into" my Nextcloud container by running this command:
+
+    #+BEGIN_SRC sh
+      NC_POD=$(kubectl get pods | grep nextcloud | grep -vi mysql | grep -v svclb | awk '{print $1}') 
+      kubectl exec -it "$NC_POD" -- bash
+    #+END_SRC
+
+    I'm in! Next I tried turning off maintenance mode like so:
+
+    #+BEGIN_SRC sh
+      cd /var/www/html
+      ./occ maintenance:mode --off
+    #+END_SRC
+
+    When I did I got the following response:
+
+    #+BEGIN_EXAMPLE
+Nextcloud or one of the apps require upgrade - only a limited number of commands are available
+You may use your browser or the occ upgrade command to do the upgrade
+Maintenance mode disabled                            
+    #+END_EXAMPLE
+
+    What a *great* error message! At this point it was clear that the upgrade was not
+    yet done. There's hope of fixing this thing!
+
+    I therefore ran the following command while I was still inside that shell:
+
+    #+BEGIN_SRC sh
+      ./occ upgrade
+    #+END_SRC
+
+    After this completed successfully I was then able to login! 
+*** Even More Scripts!
+    Naturally, the first thing I did after logging in was to visit this page:
+
+    - https://your.domain/settings/admin/overview
+
+    There I saw that I was supposed to run the following scripts:
+
+    - =occ db:add-missing-indices=
+    - =occ db:add-missing-columns=
+
+    I ran those within my pod's shell again and the upgrade was complete. I then
+    checked the following page to make sure that I covered everything:
+
+    - https://docs.nextcloud.com/server/latest/admin_manual/maintenance/upgrade.html
+
+    Good luck with your upgrade!
+    
 * Meta
 ** About Me                                                           :@meta:
    :PROPERTIES:
