@@ -462,40 +462,58 @@
     :PROPERTIES:
     :CUSTOM_ID: toolset
     :END:
-  - Emacs
-    - [[http://tkf.github.io/emacs-jedi/latest/][jedi.el]]
-    - Projectile
-    - [[https://www.flycheck.org/en/latest/][flycheck]] (for Emacs)
-    - elpy
-    - pipenv.el
-  - pytest
-  - pipenv
-  - Multiple terminal windows for the following helpers:
-    - ipython
-    - git
+    I'm "ride or die" with Emacs, so I use that as my editor/IDE. I set things up
+    very similarly to what you will see here:
+
+    - https://realpython.com/emacs-the-best-python-editor/
+
+    I also use =pipenv= for dependency and virtualenv management. 
+
 *** Pipenv
 **** Rebuilding a virtual environment
      One of the great things about =pipenv= is that it makes virtual environment
      management relatively brainless. For example, here's how I rebuild a "clean"
      virtual environment:
 
-#+BEGIN_EXAMPLE
-# Assuming that you're within the "broken" virtualenv shell
-exit
-pipenv --rm
-pipenv --python <path to python interpreter in your pipfile>
-pipenv install
-pipenv install --dev
-pipenv shell
-#+END_EXAMPLE
+     #+BEGIN_EXAMPLE
+     # Assuming that you're within the "broken" virtualenv shell
+     exit
+     pipenv --rm
+     pipenv --python <path to python interpreter in your pipfile>
+     pipenv install
+     pipenv install --dev
+     pipenv shell
+     #+END_EXAMPLE
+
 **** Creating a New Project
      Assuming that your project does not *yet* have a Pipfile, here's how I create
      one:
 
      #+BEGIN_EXAMPLE
-pipenv --python <path to preferred python interpreter>
-pipenv install --dev pytest jedi autopep8 yapf flake8
+     pipenv --python <path to preferred python interpreter>
+     pipenv install --dev jupyter jedi rope autopep8 yapf flake8 pytest pytest-cache
+     echo 'Pipfile.lock -diff' >> .gitattributes
+     cat <<EOF >> .gitignore
+     *~
+     *.bak
+     #*
+     venv/
+
+     *.pyc
+     __pycache__/
+
+     instance/
+
+     .pytest_cache/
+     .coverage
+     htmlcov/
+
+     dist/
+     build/
+     *.egg-info/
+     EOF
      #+END_EXAMPLE
+
 **** Managing Pipfile and Pipfile.lock
      This is a good resource:
 
