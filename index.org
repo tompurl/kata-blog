@@ -1479,6 +1479,27 @@ feature implemented. You should never put refactoring on any board.
 
    1. Choose two-sided printing, *long edge*.
    2. Choose the *landscape* orientation.
+** DONE "Kubernetes For (Moderately) Old Dogs" - Presentation :kubernetes:openfaas:
+   CLOSED: [2020-09-12 Sat 09:58]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Old_Dog_Kubernetes_Presentation
+   :EXPORT_DATE: 9/12/2020
+   :END:
+
+   [[https://static.tompurl.com/images/Tom_as_a_dog_small.jpg]]
+
+   On 8/1 I gave a [[https://www.meetup.com/the-it-crowd-org/events/271971616/][presentation]] titled *Intro to Kubernetes For Devops: From the
+   perspective of a (somewhat) old dog* for the [[https://www.meetup.com/the-it-crowd-org][IT Crowd - Naperville]] computer
+   club. As usual, it was a lot of fun with a great group.
+
+   What I basically did was create a quick *Openfaas* system and deploy a few
+   functions on top of it. We then discussed what it was I actually did and a few
+   basics about Kubernetes administation. It was a "introductory petting zoo" type of
+   presentation.
+
+   I don't believe the talk was recorded, but here's a link to the presentation:
+
+   - [[https://static.tompurl.com/Old_Dog_Kubernetes_Presentation/][Intro to Kubernetes For Devops: From the perspective of a (somewhat) old dog]]
 * Tutorials                                                      :@tutorials:
 ** DONE Reasons For Not Writing Your API Tests In Postman :testing:api:postman:robot_framework:
    :PROPERTIES:
