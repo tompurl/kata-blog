@@ -1791,7 +1791,121 @@ Maintenance mode disabled
     - https://docs.nextcloud.com/server/latest/admin_manual/maintenance/upgrade.html
 
     Good luck with your upgrade!
-    
+** DONE An Elementary OS Overview For Debian Users :flatpak:debian:elementary:
+   CLOSED: [2020-09-17 Thu 20:17]
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: Elementary_OS_Overview_For_Debian_Users
+   :EXPORT_DATE: 9/17/2020
+   :END:
+   I was recently needed to re-install my Linux distribution. I've been a vanilla
+   Debian user for at least 10 years now and most recently had started using [[https://github.com/ch11ng/exwm][EXWM]] as
+   my window manager. I was having a lot of fun with that but thought that it might
+   also be fun to see what some of the more user-friendly desktop Linux distros could
+   offer.
+
+   I decided to try out [[https://elementary.io/][Elementary OS]] because it looked very nice and was based on
+   Ubuntu (which is based on Debian so it should be hard for me to *really* mess
+   things up). After playing around with the live version on a thumbdrive for 30
+   minutes I decided to install it and try things out "for real".
+
+   It's been, well, *nice, but weird*. Here's what I wish I had known before I got
+   started, and hopefully it will help a few other people who are used to the Debian
+   way of doing things.
+*** What I'm Working With
+    First, here's what I'm working with:
+
+       [[/images/neofetch-screenshot.png]]
+
+*** Lots Of Ways To Install Packages
+    One of the first things I started playing with was *AppCenter*, which is
+    basically the Elementary OS app store. It has a very nice UI and offers a lot of
+    packages out-of-the-box that many other distros do not (e.g. Zoom).
+
+    So I started installing a bunch of packages that I needed using this tool, like
+    Emacs and Zoom. I then opened the terminal app and tried launching Zoom like this:
+
+#+BEGIN_EXAMPLE
+07:27:44 tom@poochie tmp → zoom
+
+Command 'zoom' not found, but can be installed with:
+
+sudo apt install zoom-player
+
+07:27:46 tom@poochie tmp → 
+#+END_EXAMPLE
+
+    Uh, I'm pretty sure that AppCenter told me that I just installed Zoom. So I
+    checked the launcher window and there it was. Hmm. Well, let's launch it and see
+    what the process table tells me:
+
+    #+BEGIN_SRC sh :exports both :results output
+      ps auxwww | grep zoom | grep -v grep
+    #+END_SRC
+
+    #+RESULTS:
+    : tom       9652  0.0  0.0   6636   832 ?        S    19:24   0:00 /usr/libexec/flatpak-bwrap --args 34 zoom
+    : tom       9680  0.0  0.0   6896  1596 ?        S    19:24   0:00 /usr/libexec/flatpak-bwrap --args 34 zoom
+    : tom       9681  0.0  0.0  14348  3444 ?        Sl   19:24   0:00 /app/extra/zoom/ZoomLauncher
+    : tom       9683  0.0  0.0   7068  3536 ?        S    19:24   0:00 sh -c export SSB_HOME=/home/tom/.zoom; export QSG_INFO=1; export QT_AUTO_SCREEN_SCALE_FACTOR=1; export LD_LIBRARY_PATH=/app/extra/zoom; export BREAKPAD_CLIENT_FD=3; /app/extra/zoom/zoom ""
+    : tom       9684  9.0  3.0 4589728 239016 ?      RLl  19:24   0:52 /app/extra/zoom/zoom
+    : tom       9652  0.0  0.0   6636   832 ?        S    19:24   0:00 /usr/libexec/flatpak-bwrap --args 34 zoom
+    : tom       9680  0.0  0.0   6896  1596 ?        S    19:24   0:00 /usr/libexec/flatpak-bwrap --args 34 zoom
+    : tom       9681  0.0  0.0  14348  3444 ?        Sl   19:24   0:00 /app/extra/zoom/ZoomLauncher
+    : tom       9683  0.0  0.0   7068  3536 ?        S    19:24   0:00 sh -c export SSB_HOME=/home/tom/.zoom; export QSG_INFO=1; export QT_AUTO_SCREEN_SCALE_FACTOR=1; export LD_LIBRARY_PATH=/app/extra/zoom; export BREAKPAD_CLIENT_FD=3; /app/extra/zoom/zoom ""
+    : tom       9684  9.1  3.0 4586380 234880 ?      SLl  19:24   0:32 /app/extra/zoom/zoom
+
+    Uh, this is weird. So it turned out that everything that I had installed using
+    AppCenter was installed using [[https://flatpak.org/][Flatpak]]. It's a new format that's kindof like [[https://snapcraft.io/store][Snaps]]
+    or [[https://appimage.org/][AppImage]] ([[https://github.com/AppImage/AppImageKit/wiki/Similar-projects#comparison][here's]] an excellent comparison of the 3). 
+
+    Which is ok I guess as long as I launch the app via the Applications Menu. But if
+    you want to launch something from the command line (like rsync or emacs or and
+    other cli app) then you have to *prepend the exe name* with some flatpak
+    stuff.
+
+    Also, the location of config files changes. I installed [[https://www.thunderbird.net/en-US/][Thunderbird]] using the
+    AppCenter because the version available via =apt= was too old for my profile. For
+    as long as I've used Thunderbird the config files have always been under
+    =~/.thunderbird=. How they're in =~/.var/app/org.mozilla.Thunderbird/=. Not a
+    huge deal but something that tripped me up a little bit.
+
+    So is that bad? Well, not for most of the apps that I would install using the
+    AppCenter. But if I ever want to run the app from the command line then I think
+    it pays to install the app using =apt= instead.
+*** Flatpak Advantages
+    There are some nice things about Flatpaks too. On vanilla Debian the standard way
+    of installing software that wasn't available in the official repo was to either
+    compile it from source (my preference) or try "pinning" something from the
+    *testing* version (which I long ago learned to avoid).
+
+    But installing from a Flatpak is stupid simple on Elementary. You can either
+    install the app using AppCenter or go to a site like [[https://flathub.org/home][Flathub]] and just click on a
+    link. That's pretty freakin' sweet and *much* faster than compiling most
+    non-trivial software from source.
+*** The Status Bar Is Limited
+    The status bar shows some very important things (battery health, network status,
+    bluetooth, etc.) but doesn't seem to be very easy to add to. I've been spoiled
+    recently by status bars that communicate everything from your VPN connection
+    status to the score of your local hockey game. So this is a minor setback.
+*** It's Based on Ubuntu 18.04, /Not/ Debian 9
+    When you do end up installing some of the apps using =apt= you may notice that
+    they seem a little old. That's because the current version of Elementary is based
+    on Ubuntu 18.04 and *not* Debian 9. You can get around some of the old apps in
+    =apt= by installing Flatpaks but that doesn't work for everything.
+*** So What Else Is Positive?
+    There is a lot that I do like about distro:
+    - It *really* feels like some of the *best parts of an OS X desktop without the
+      bloat*. Everything is very snappy, even on my 5 year-old laptop.
+    - It's pretty much *plug and play*. Multiple monitors, wifi, audio, etc., all
+      worked very well out-of-the-box.
+    - It simply *looks great*. It's been a while since I've been able to enjoy the
+      aesthetics of my desktop.
+    - The 8support community* so far has been very *helpful and kind*.
+*** Conclusion
+    I'd love to complain about having to learn all of these new things in order to
+    use Elementary but in reality it's been a lot of fun. This is a very stable,
+    eye-pleasing and easy-to-use distribution that does a lot of things in new and
+    innovative ways. I look forward to seeing where this distro choose to go.
 * Meta
 ** About Me                                                           :@meta:
    :PROPERTIES:
