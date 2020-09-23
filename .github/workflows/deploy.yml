@@ -1,0 +1,40 @@
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Setup Emacs
+      uses: purcell/setup-emacs@master
+      with:
+        version: 27.1
+        
+    - name: Export to Markdown
+      uses: some/sort/of/emacs/thing
+      
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.75.1'
+
+    - name: Build HTML
+      run: hugo --minify
+      
+    - name: Publish
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr
+        path: public/
+        remote_path: /something/here
+        remote_host: ${{ secrets.HOST }}
+        remote_user: ${{ secrets.SSH_USER }}
+        remote_key: ${{ secrets.DEPLOY_KEY }}
