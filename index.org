@@ -1819,10 +1819,11 @@ Maintenance mode disabled
 *** Lots Of Ways To Install Packages
     One of the first things I started playing with was *AppCenter*, which is
     basically the Elementary OS app store. It has a very nice UI and offers a lot of
-    packages out-of-the-box that many other distros do not (e.g. Zoom).
+    packages out-of-the-box that many other distros do not..
 
-    So I started installing a bunch of packages that I needed using this tool, like
-    Emacs and Zoom. I then opened the terminal app and tried launching Zoom like this:
+    So I started installing a bunch of packages using AppCenter that I needed using
+    this tool, like *Zoom*. I then opened the terminal app and tried launching Zoom
+    like this:
 
 #+BEGIN_EXAMPLE
 07:27:44 tom@poochie tmp → zoom
@@ -1854,24 +1855,31 @@ sudo apt install zoom-player
     : tom       9683  0.0  0.0   7068  3536 ?        S    19:24   0:00 sh -c export SSB_HOME=/home/tom/.zoom; export QSG_INFO=1; export QT_AUTO_SCREEN_SCALE_FACTOR=1; export LD_LIBRARY_PATH=/app/extra/zoom; export BREAKPAD_CLIENT_FD=3; /app/extra/zoom/zoom ""
     : tom       9684  9.1  3.0 4586380 234880 ?      SLl  19:24   0:32 /app/extra/zoom/zoom
 
-    Uh, this is weird. So it turned out that everything that I had installed using
-    AppCenter was installed using [[https://flatpak.org/][Flatpak]]. It's a new format that's kindof like [[https://snapcraft.io/store][Snaps]]
-    or [[https://appimage.org/][AppImage]] ([[https://github.com/AppImage/AppImageKit/wiki/Similar-projects#comparison][here's]] an excellent comparison of the 3). 
+    Uh, this is weird. So it turned out that the version of Zoom that I had installed
+    using AppCenter was installed using [[https://flatpak.org/][Flatpak]]. It's a new format that's kindof like
+    [[https://snapcraft.io/store][Snaps]] or [[https://appimage.org/][AppImage]] ([[https://github.com/AppImage/AppImageKit/wiki/Similar-projects#comparison][here's]] an excellent comparison of the 3).
 
     Which is ok I guess as long as I launch the app via the Applications Menu. But if
     you want to launch something from the command line (like rsync or emacs or and
     other cli app) then you have to *prepend the exe name* with some flatpak
     stuff.
 
-    Also, the location of config files changes. I installed [[https://www.thunderbird.net/en-US/][Thunderbird]] using the
-    AppCenter because the version available via =apt= was too old for my profile. For
-    as long as I've used Thunderbird the config files have always been under
-    =~/.thunderbird=. How they're in =~/.var/app/org.mozilla.Thunderbird/=. Not a
-    huge deal but something that tripped me up a little bit.
+    Also, the location of config files changes with Flatpak-based executables. I
+    installed [[https://www.thunderbird.net/en-US/][the Thunderbird flatpak]] using the AppCenter because the version
+    available via =apt= was too old for my profile. For as long as I've used
+    Thunderbird the config files have always been under =~/.thunderbird=. How they're
+    in =~/.var/app/org.mozilla.Thunderbird/=. Not a huge deal but something that
+    tripped me up a little bit.
 
-    So is that bad? Well, not for most of the apps that I would install using the
-    AppCenter. But if I ever want to run the app from the command line then I think
-    it pays to install the app using =apt= instead.
+    So dose AppCenter only install flatpaks? Well, I *used* to think so (and an older
+    version of this article assumed that it did) but thankfully [[https://www.reddit.com/user/davidhewitt/][davidhewitt on Reddit]]
+    reached out to me to me with [[https://www.reddit.com/r/elementaryos/comments/iuwre6/an_elementary_os_overview_for_debian_users/g5oouo2/?utm_source=reddit&utm_medium=web2x&context=3][an explanation]]. He said that when you install a
+    flatpak from a web browser using a repo like [[https://flathub.org/home][Flathub]] then that repo is added to
+    the list of AppCenter repos. So yes, you *can* install some flatpaks from
+    AppCenter but you can install from *lots* of different repos.
+
+    Which I have to admit, is confusing, but very cool and probably a godsend for new
+    Linux users. I just need to get used to it now 😼
 *** Flatpak Advantages
     There are some nice things about Flatpaks too. On vanilla Debian the standard way
     of installing software that wasn't available in the official repo was to either
