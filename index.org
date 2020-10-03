@@ -1425,6 +1425,262 @@ feature implemented. You should never put refactoring on any board.
       Republicans don't like it; they don't like spending money on anything unless it
       blows up, like Iraq, or Merill Lynch."
   #+END_QUOTE
+** 2020 October Media Log                                :movies:tv:podcasts:
+    :PROPERTIES:
+   :EXPORT_FILE_NAME: October_2020_Media
+   :EXPORT_DATE: 10/2/2020
+   :EXPORT_HUGO_MENU: :menu "fun"
+   :EXPORT_HUGO_SECTION: fun
+   :END:
+*** 10/01/2020
+**** DONE Into the Bunker
+   CLOSED: [2020-10-02 Fri 07:30]
+   :PROPERTIES:
+   :TV_SHOW:  Gravity Falls
+   :EPISODE_NUMBER: s02e02
+   :END:
+**** DONE Treehouse of Horror 5
+   CLOSED: [2020-10-02 Fri 08:00]
+   :PROPERTIES:
+   :TV_SHOW:  Simpsons
+   :EPISODE_NUMBER: s06e06
+   :END:
+**** DONE Full Bars
+   CLOSED: [2020-10-02 Fri 08:30]
+   :PROPERTIES:
+   :TV_SHOW:  Bob's Burgers
+   :EPISODE_NUMBER: s03e02
+   :END:
+*** 10/02/2020
+**** DONE Sock Opera
+     CLOSED: [2020-10-02 Fri 18:30]
+     :PROPERTIES:
+     :TV_SHOW:  Gravity Falls
+     :EPISODE_NUMBER: s02e04
+     :END:
+**** DONE Land Before Swine 
+     CLOSED: [2020-10-02 Fri 19:00]
+     :PROPERTIES:
+     :EPISODE_NUMBER: s01e18
+     :TV_SHOW:  Gravity Falls
+     :END:
+     - State "DONE"       from "TODO"       [2020-10-03 Sat 10:39]
+**** DONE Army of Darkness
+     CLOSED: [2020-10-02 Fri 20:30]
+*** 10/03/2020
+**** TODO Creature from the Black Lagoon
+**** TODO The Thing
+*** Options
+**** TODO Hotel Transylvania
+**** TODO Coraline
+**** TODO The Shining
+**** TODO Frankenweenie
+**** TODO The Adventures of Ichabod and Mr. Toad
+**** TODO Little Shop of Horrors
+**** TODO The House with a clock in its walls
+**** TODO Coco
+**** TODO Paranorman
+**** TODO Mandy
+**** TODO Train to Busan
+**** TODO Poltergeist
+**** TODO Bride of Boogedy
+**** TODO Aliens
+**** TODO American Werewolf in London
+**** TODO Housebound
+**** TODO Tucker and Dale vs. Evil
+**** TODO Cabin the the Woods
+**** TODO Zombieland
+**** TODO Get Out
+**** TODO Shaun of the Dead
+**** TODO Gremlins
+**** TODO Young Frankenstein
+**** TODO Bubba Ho-tep
+**** TODO Tremorsg
+**** TODO Treehouse Of Horror
+     :PROPERTIES:
+     :EPISODE_NUMBER: s02e03
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END:
+**** TODO Treehouse Of Horror 2
+     :PROPERTIES:
+     :EPISODE_NUMBER: s03e07
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 3
+     :PROPERTIES:
+     :EPISODE_NUMBER: s04e05
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 4
+     :PROPERTIES:
+     :EPISODE_NUMBER: s05e05
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 6
+     :PROPERTIES:
+     :EPISODE_NUMBER: s07e06
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 7
+     :PROPERTIES:
+     :EPISODE_NUMBER: s08e01
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 8
+     :PROPERTIES:
+     :EPISODE_NUMBER: s09e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 9
+     :PROPERTIES:
+     :EPISODE_NUMBER: s10e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 10
+     :PROPERTIES:
+     :EPISODE_NUMBER: s11e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 11
+     :PROPERTIES:
+     :EPISODE_NUMBER: s12e01
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 12
+     :PROPERTIES:
+     :EPISODE_NUMBER: s13e01
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 13
+     :PROPERTIES:
+     :EPISODE_NUMBER: s14e01
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 14
+     :PROPERTIES:
+     :EPISODE_NUMBER: s15e01
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 15
+     :PROPERTIES:
+     :EPISODE_NUMBER: s16e01
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 16
+     :PROPERTIES:
+     :EPISODE_NUMBER: s17e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 17
+     :PROPERTIES:
+     :EPISODE_NUMBER: s18e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 18
+     :PROPERTIES:
+     :EPISODE_NUMBER: s19e05
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 19
+     :PROPERTIES:
+     :EPISODE_NUMBER: s20e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 20
+     :PROPERTIES:
+     :EPISODE_NUMBER: s21e04
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 21
+     :PROPERTIES:
+     :EPISODE_NUMBER: s22e04
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 22
+     :PROPERTIES:
+     :EPISODE_NUMBER: s23e03
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 23
+     :PROPERTIES:
+     :EPISODE_NUMBER: s24e02
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 24
+     :PROPERTIES:
+     :EPISODE_NUMBER: s25e02
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 25
+     :PROPERTIES:
+     :EPISODE_NUMBER: s26e04
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 26
+     :PROPERTIES:
+     :EPISODE_NUMBER: s27e05
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 27
+     :PROPERTIES:
+     :EPISODE_NUMBER: s28e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 28
+     :PROPERTIES:
+     :EPISODE_NUMBER: s29e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 29
+     :PROPERTIES:
+     :EPISODE_NUMBER: s30e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+
+**** TODO Treehouse Of Horror 30
+     :PROPERTIES:
+     :EPISODE_NUMBER: s31e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+**** TODO Treehouse Of Horror 31
+     :PROPERTIES:
+     :EPISODE_NUMBER: s32e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
+
+
+
+
 * Presentations                                              :@presentations:
 ** DONE "Practical Introduction To The Blockchain Using Ethereum" - Presentation
    CLOSED: [2019-10-21 Mon 12:22]
