@@ -1464,12 +1464,28 @@ feature implemented. You should never put refactoring on any board.
      :EPISODE_NUMBER: s01e18
      :TV_SHOW:  Gravity Falls
      :END:
-     - State "DONE"       from "TODO"       [2020-10-03 Sat 10:39]
 **** DONE Army of Darkness
      CLOSED: [2020-10-02 Fri 20:30]
 *** 10/03/2020
-**** TODO Creature from the Black Lagoon
-**** TODO The Thing
+**** DONE Creature from the Black Lagoon
+     CLOSED: [2020-10-03 Sat 15:28]
+**** DONE The Thing
+     CLOSED: [2020-10-03 Sat 22:00]
+*** 10/04/2020
+**** DONE Treehouse Of Horror 26
+     CLOSED: [2020-10-04 Sun 14:31]
+     :PROPERTIES:
+     :EPISODE_NUMBER: s27e05
+     :OWN:      false
+     :TV_SHOW:  Simpsons
+     :END:
+**** DONE Treehouse Of Horror 28
+     CLOSED: [2020-10-04 Sun 15:00]
+     :PROPERTIES:
+     :EPISODE_NUMBER: s29e04
+     :OWN:      true
+     :TV_SHOW:  Simpsons
+     :END: 
 *** Options
 **** TODO Hotel Transylvania
 **** TODO Coraline
@@ -1640,21 +1656,9 @@ feature implemented. You should never put refactoring on any board.
      :OWN:      false
      :TV_SHOW:  Simpsons
      :END: 
-**** TODO Treehouse Of Horror 26
-     :PROPERTIES:
-     :EPISODE_NUMBER: s27e05
-     :OWN:      false
-     :TV_SHOW:  Simpsons
-     :END: 
 **** TODO Treehouse Of Horror 27
      :PROPERTIES:
      :EPISODE_NUMBER: s28e04
-     :OWN:      true
-     :TV_SHOW:  Simpsons
-     :END: 
-**** TODO Treehouse Of Horror 28
-     :PROPERTIES:
-     :EPISODE_NUMBER: s29e04
      :OWN:      true
      :TV_SHOW:  Simpsons
      :END: 
