@@ -1,7 +1,8 @@
 baseURL = "https://www.tompurl.com/"
 title = "Tom Purl's Website"
 languageCode = "en-us"
-theme = "ghostwriter"
+# theme = "ghostwriter"
+theme = "hugo-theme-chunky-poster"
 # pygmentsCodeFences = "true"
 
 [Author]
