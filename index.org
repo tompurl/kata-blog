@@ -1684,7 +1684,6 @@ feature implemented. You should never put refactoring on any board.
 
 
 
-
 * Presentations                                              :@presentations:
 ** DONE "Practical Introduction To The Blockchain Using Ethereum" - Presentation
    CLOSED: [2019-10-21 Mon 12:22]
@@ -2174,6 +2173,262 @@ sudo apt install zoom-player
     use Elementary but in reality it's been a lot of fun. This is a very stable,
     eye-pleasing and easy-to-use distribution that does a lot of things in new and
     innovative ways. I look forward to seeing where this distro choose to go.
+** DONE Jenkinsfile's, Raspberry Pi's, and Kubernetes, Oh My!
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: jenkinsfile_rpi_k8s
+   :EXPORT_DATE: 11/19/2020
+   :END:
+
+   I am working on a [[https://api.justgivemethefucking.recipes][small API]] as a side project and thought that this would be a
+   nice opportunity to implement a CI/CD pipeline that could run in Jenkins. Here
+   were my constraints:
+
+   1. I wanted as many moving pieces as possible to be hosted on my private home
+      network that is behind a firewall. This would give me better privacy while I
+      was learning.
+   2. The app has to be deployed on a K3S cluster comprised of Raspberry Pi hardware.
+   3. Jenkins as a CI/CD tool
+   4. MongoDB as my database
+   5. I don't want to spend any money
+
+   Here's some of my lessons learned, including a few poorly-document issues that
+   gave me fits. I hope you enjoy it :-)
+*** What I Implemented
+
+    For this type of pipeline you need the following basic components at a minimum:
+
+    1. A CI/CD tool to run and schedule jobs
+    2. A tool to manage your git repository
+       - Ok, it isn't a *requirement* to use some sort of web-based =git= wrapper,
+         but it really is very nice.
+    3. A Docker registry
+    4. A place to deploy your images, i.e. a runtime environment
+    5. A place to run your database
+
+    There's a lot of free, hosted solutions available that give you a lot of those
+    tools bundled together. For example, the public instance of Gitlab gives you 1 &
+    2 for free (and maybe 3?). It definitely also has hooks into hosting and database
+    providers, but I don't think they're free. For that you will need to use a free
+    tier of Heroku or something similar (which offers 3-5 for free).
+
+    But I wanted to self host as much as possible. The good news is that I already
+    have a lot of cool servers running on my private home network. so here's what I
+    decided on:
+
+    | Category          | Tool                  | Self Hosted? | Already Running in Home Lab? |
+    |-------------------+-----------------------+--------------+------------------------------|
+    | CI/CD             | Jenkins               | ☑          | ☑                          |
+    | Git Repo          | Gitea                 | ☑          | ❌                          |
+    | Docker Registry   | Digital Ocean         | ❌          | n/a                          |
+    | Runtime Env       | K3S Cluster           | ☑          | ☑                          |
+    | Database Provider | Spare Raspbian server | ☑          | ☑                          |
+
+    I chose Gitea because it was very simple to setup and had the basics of what I
+    needed. I really wanted to host my own Docker Registry, but that proved to be a
+    huge pain in the butt, so I just gritted my teeth and dropped the $5 a month on
+    Digital Ocean's offering.
+*** Setup Experience
+    I'm a DevOps engineer for a living. For me it is both easy and my idea of a good
+    time to setup a simple Gitea server on my home network. If that's not your idea
+    of a fun 30 minutes or you don't have the hardware lying around then this is a
+    huge pain and you should look into what Github and Gitlab offer for free.
+
+    Having said that the setup was pretty easy and fun. I setup Gitea using Docker
+    Compose. Jenkins was already running but I did have to spend another 30 minutes
+    integrating the two tools using the official plugin.
+
+    Where I spent most of my time was setting up one of my Raspberry Pi servers as a
+    build agent (i.e. "slave"), which is not to say it was complex, just not
+    something I've done before. However, I couldn't test and build my images on my
+    Jenkins master because:
+
+    - My Jenkins master runs on x64 hardware
+    - My runtime environment (my K3S cluster) runs on Raspberry Pi's
+
+    I used the following tutorial to help:
+
+    - https://www.gdcorner.com/2019/12/27/JenkinsHomeLab-P2-LinuxAgents.html
+
+    Here's the overview of what I did to setup the Jenkins agent:
+
+    - Install Java
+    - Create a =jenkins= user
+    - Add user to the =docker= group (so that I can run =docker= commands without
+      using sudo)
+    - Reboot the jenkins agent
+    - Ensure that the user can authenticate to the DO registry from the command
+      line, which requires...
+      - Retrieving an API key from the DO site
+      - Installing a =go= binary
+      - Installing =doctl= using =go install=
+      - Authenticating with doctl using that API key as the =jenkins= user
+    - Adding the public SSH key from the jenkins user on my Jenkins master server to
+      the =.ssh/authorized_keys= file for the jenkins user on the Jenkins agent
+    - Configuring the Jenkins agent as a "permanent agent" over ssh in the Jenkins master
+    - Whew!
+
+    I thought the hardest part would be the agent creation step, but that was fairly
+    automatic since we're using the SSH protocol.
+*** Lessons Learned
+**** Most Jenkins Documentation Reads Like Stereo Instructions
+     I kept looking for "cookbook" tutorials on setting up a simple pipeline that
+     deploys to a Kubernetes cluster, but instead most searches just returned pages
+     of API documentation. I assume these docs exists but I haven't found them yet.
+
+     I'm hoping to help counteract some of that with this article.
+**** The Jenkins Plugin Ecosystem is Messy
+     At the end of the day, I only needed to install the following non-standard
+     plugins to make everything work:
+
+     - Kubernetes Continuous Deploy Plugin
+     - Gitea Plugin
+
+     Please note that the Kubernetes Continues Deploy Plugin is *not* the same as the
+     following plugins:
+
+     - Kubernetes
+     - Kubernetes Client API Plugin
+     - Kubernetes Credentials Plugin
+
+     Not only are they separate, they don't necessarily have anything to do with each
+     other. And they may have overlapping functionality. And they may all support
+     different versions of the K8S spec. 😕
+
+     So since that is all true and since I couldn't find a cookie cutter tutorial, I
+     spent a lot of time going down rabbit holes, only to find that I was using the
+     wrong plugin all along. Ugh.
+
+     Simply put, if you don't even know what plugin you need, then you don't know
+     what search terms to use, and you're going to waste a lot of time.
+**** Jenkins is Hampered By Multiple Programming Styles
+     You can use two different syntaxes when writing a =Jenkinsfile=:
+
+     - Scripted
+     - Declarative
+
+     What's the difference? It's confusing. I've read tutorials for about an hour on
+     this and I still have trouble explaining it. [[https://docs.cloudbees.com/docs/admin-resources/latest/pipeline-syntax-reference-guide/scripted-pipeline][This]] is helpful. Oh, and even
+     though the Scripted syntax using Groovy, it's not really Groovy.
+
+     Most tutorials will not tell you which syntax they're using, so you need to
+     really know the difference before you get started reading tutorials. But you
+     can't truly about the syntax until you start reading tutorials. Rinse and repeat
+     until you see red.
+**** Enough Whining About Jenkins
+     I admire that there are so many options for writing =Jenkinsfile='s. And Jenkins
+     gives you more options and power than probably any other CI/CD tool
+     available. I'm just grumpy about the learning curve. I'm sure I'll forget the
+     pain in a few weeks and appreciate all of the power and flexibility :-)
+*** Actual Code
+
+    So you have your home lab. You have your Gitea server, your Jenkins master and
+    agent, a K3S cluster and your awesome app that you want to build, test and deploy
+    using a CI/CD pipeline. So how do you write a =Jenkinsfile=?
+
+    Here's the =Jenkinsfile= that works for me. Please note that I'm running this from
+    a *Gitea Organization* job:
+
+    #+BEGIN_SRC groovy -n
+      node('master') {
+
+          stage('Clone repository') {
+              checkout scm
+              stash includes: '**/*', name: 'sources'
+          }
+
+          stage('Build image') {
+              node('raspberry-pi-4') {
+                  unstash 'sources'
+                  sh "docker build -t jgmtfr ."
+              }
+          }
+
+          stage('Test and Lint') {
+              node('raspberry-pi-4') {
+                  sh "docker run -e FLASK_ENV=staging -e APP_SETTINGS=project.config.StagingConfig jgmtfr make stage-prep"
+              }
+          }
+
+          // If a change has been made to master then it's time to re-deploy
+          if (env.BRANCH_NAME == 'master') {
+
+              stage('Deploy') {
+                  node('raspberry-pi-4') {
+
+                      // This is a bit strange, but if I want to create a calculated env
+                      // var in a scripted pipeline then I need to first calculate the
+                      // value in a script block and *then* interpolate that variable in
+                      // the withEnv block below. Jesus it took me a while to figure that
+                      // out.
+                      script {
+                          DATETIME_TAG = new Date().format("YYMMdd_HHmm", TimeZone.getTimeZone('UTC'))
+                      }
+
+                      withEnv(["IMAGE_TAG=${DATETIME_TAG}"]) {
+
+                          // FIXME: requires authenticating to the digitalocean registry before running the
+                          // first time sudo apt install pass gnupg2 # to handle auth secret "encryption"
+                          // sudo su - jenkins doctl auth init doctl registry login
+                          sh "make ARGS=${IMAGE_TAG} publish-docker-image"
+
+                          // There's a bug that causes this to fail if not executed on an agent
+                          // https://github.com/jenkinsci/kubernetes-cd-plugin/issues/122
+                          kubernetesDeploy(
+                              kubeconfigId: 'dipper-k3s-kubeconfig',
+                              configs: '**/kube/deployment.yaml',
+                              enableConfigSubstitution: true,
+                              secretNamespace: 'default',
+                              dockerCredentials: [
+                                  [
+                                      credentialsId: 'do-registry-creds-userpass',
+                                      url: 'https://registry.digitalocean.com'
+                                  ],
+                              ],
+                          )
+                      }
+                  }
+              }
+          }
+      }
+    #+END_SRC
+
+    Here's what stands out.
+**** Stashing
+
+     One thing that was *much* easier than it deserved to be was copying my code repo
+     from my Jenkins master (running on an x64-based system) to my build agent (which
+     runs on a Raspberry Pi 4). As you can see in lines 5 and 10 in the document, all
+     I had to do was *stash* and *unstash*. I'm still amazed by how seamless and
+     simple this process is.
+**** Conditional Logic Based On Branch Name
+
+     Again, this is surprisingly simple. The branch name is stored as an environment
+     variable automatically, so I can choose to only deploy when I merge something
+     with the =master= branch.
+**** Generating an Image Tag
+     I probably spent as much time troubleshooting this as I did on anything else. I
+     wanted to use the =DATETIME_TAG= variable in my =deployment.yaml= files, and the
+     good news is that I can perform variable substitution in my YAML files using the
+     Kubernetes CD plugin. All I had to do was make =IMAGE_TAG= an environment
+     variable.
+
+     Well, it turns out that the scoping for environment variables is weird, and
+     there's very little documentation on that weirdness, especially if you're using
+     the scripted syntax like I am. What's worse though is that I found *literally 0
+     tutorials* showing me how to create an environment varible *using* the scripted
+     syntax *that also needs to be set dynamically*.
+
+     So if you're in the same boat, lines 32-36 worked for me. It looks hacky and
+     weird (and probably is), so if you know a better way I'd love to hear about it.
+*** Conclusion
+    If you've gotten this far then, well, thank you for reading my diatribe :-) I
+    genuinely am very happy with all of the wonderful, open source tools that you can
+    use to build a pipeline. Like I said above, I'm angry at Jenkins now for not
+    coming to my birthday party, but it's easy to forget how it's always been there
+    in the past.
+
+    And I hope I helped a few other people out.
+
 * Meta
 ** About Me                                                           :@meta:
    :PROPERTIES:
