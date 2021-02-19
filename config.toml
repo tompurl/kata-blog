@@ -22,6 +22,7 @@ theme = "hugo-theme-chunky-poster"
     twitter = "https://mastodon.technology/@tompurl"
     reddit = "https://www.reddit.com/user/tompurl"
     stackoverflow = "https://stackoverflow.com/users/1380901/tom-purl"
+    homepageImage = "/images/neofetch-screenshot.png"
 
 [[menu.main]]
     name = "Blog"
